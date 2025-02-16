@@ -25,4 +25,5 @@ function check(param) {
 }
 
 let ans = check(str);
-console.log(ans.length());
+console.log(ans);
+// console.log(ans.length());
