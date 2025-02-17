@@ -5,18 +5,18 @@ function check(num) {
     if ( num ===1 || 0) {
       console.log("not a prime number");
       return;
+    }else if(num===2){
+      console.log("2 is a prime number");
+      return;
     }
     for (let index = 2; index <= sqareroot; index++) {
        if (num%index == 0) {
           console.log("not a prime number");
           return;
        }
-       console.log("prime number")
-       return;
     }
-    
+     // If no divisors are found, it's a prime number
+    console.log("prime number"); 
 }
 
-check(2);
-// 12.	How to check if a number is a power of 2?
-// 13.	How to check if a number is a power of 3?
+check(3);
