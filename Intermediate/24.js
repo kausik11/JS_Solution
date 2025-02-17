@@ -1,27 +1,24 @@
-// 17 Write a JavaScript program that iterates integers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for multiples of five print "Buzz". For numbers multiples of both three and five print "FizzBuzz".Sample Output:
-// 1
-// 2
-// 3 Fizz
-// 4
-// 5 Buzz
-// 6 Fizz
-// 7
-// 8
-// 9 Fizz
-// 10 Buzz
+// 12.	Write a JavaScript function that takes an array of numbers and finds the second lowest and second greatest numbers, respectively.
+// Sample array : [1,2,3,4,5]
+// Expected Output : 2,4
 
+function secondLowestAndGreatest(arr) {
+    // First, we sort the array in ascending order
+    let sortedArr = [...new Set(arr)].sort((a, b) => a - b); // Use Set to remove duplicates
 
-    for (let i = 1; i <= 15; i++) {
-        if (i%3 === 0 && i%5 ===0) {
-            console.log("fizzbuzz")
-        }else if(i%3 === 0){
-            console.log("fizz")
-        }else if(i%5 === 0){
-            console.log("buzz")
-        }else{
-            console.log(i);
-        }
-        
+    // Check if the array has at least two elements after removing duplicates
+    if (sortedArr.length < 2) {
+        return 'Array needs at least two unique numbers';
     }
 
-//fizzbazz
+    // Return the second lowest and second greatest
+    let secondLowest = sortedArr[1]; // Second element
+    let secondGreatest = sortedArr[sortedArr.length - 2]; // Second last element
+
+    return `${secondLowest}, ${secondGreatest}`;
+}
+
+// Example usage:
+let arr = [1, 2, 3, 4, 5];
+console.log(secondLowestAndGreatest(arr)); // Output: 2, 4
+
